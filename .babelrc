@@ -1,0 +1,21 @@
+{
+  "presets": ["react-app"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ".",
+        "alias": {
+          "@Assets": "./src/assets",
+          "@App": "./src/app",
+          "@Components": "./src/components",
+          "@Router": "./src/router",
+          "@Screens": "./src/screens",
+          "@Services": "./src/services",
+          "@Types": "./src/types",
+          "@Utils": "./src/utils"
+        }
+      }
+    ]
+  ]
+}
