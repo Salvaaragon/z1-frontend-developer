@@ -44,3 +44,4 @@ Utiliza `docker-compose stop` para parar el contenedor docker y la ejecución de
 - [Styled components](https://styled-components.com/): Permite modificar los estilos de cada componente de manera independiente
 - [Babel](https://babeljs.io/): Compilador JavaScript
 - [TypeScript](https://www.typescriptlang.org/)
+- [React-i18next](https://react.i18next.com/): Plugin de internacionalización para react basado en i18next
