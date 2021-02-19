@@ -3,6 +3,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
+const namespaces = ['capture', 'home'];
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -16,6 +18,7 @@ i18n
     },
     fallbackLng: ['en'],
     debug: true,
+    ns: namespaces,
     defaultNS: 'common',
     keySeparator: '.',
     interpolation: {
