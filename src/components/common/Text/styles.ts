@@ -5,6 +5,7 @@ type CustomTextType = {
   color: string;
   fontfamily: string;
   fontsize: string;
+  fontstyle: string;
   fontweight: string;
   letterspacing: string;
   lineheight: string;
@@ -16,6 +17,7 @@ export const CustomText = styled.span.attrs(
     color,
     fontfamily,
     fontsize,
+    fontstyle,
     fontweight,
     letterspacing,
     lineheight,
@@ -24,6 +26,7 @@ export const CustomText = styled.span.attrs(
     color,
     fontfamily,
     fontsize,
+    fontstyle,
     fontweight,
     letterspacing,
     lineheight,
@@ -32,6 +35,7 @@ export const CustomText = styled.span.attrs(
   color: ${({ color }) => color};
   font-family: ${({ fontfamily }) => fontfamily};
   font-size: ${({ fontsize }) => fontsize};
+  font-style: ${({ fontstyle }) => fontstyle};
   font-weight: ${({ fontweight }) => fontweight};
   letter-spacing: ${({ letterspacing }) => letterspacing};
   line-height: ${({ lineheight }) => lineheight};
