@@ -6,6 +6,7 @@ type TextProps = {
   color?: string;
   fontFamily?: string;
   fontSize?: string;
+  fontStyle?: string;
   fontWeight?: string;
   letterSpacing?: string;
   lineHeight?: string;
@@ -18,6 +19,7 @@ const Text: React.FC<TextProps> = (props: TextProps) => {
     color,
     fontFamily,
     fontSize,
+    fontStyle,
     fontWeight,
     letterSpacing,
     lineHeight,
@@ -29,6 +31,7 @@ const Text: React.FC<TextProps> = (props: TextProps) => {
       color={color}
       fontfamily={fontFamily}
       fontsize={fontSize}
+      fontstyle={fontStyle}
       fontweight={fontWeight}
       letterspacing={letterSpacing}
       lineheight={lineHeight}
@@ -42,7 +45,8 @@ Text.defaultProps = {
   alignment: 'right',
   color: '#000',
   fontFamily: 'Roboto',
-  fontSize: '14px',
+  fontSize: '1rem',
+  fontStyle: 'normal',
   fontWeight: 'initial',
   letterSpacing: '0',
   lineHeight: '1.5rem',

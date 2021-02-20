@@ -1,17 +1,28 @@
 import React from 'react';
 import { CustomImage } from './styles';
 
-type ImageProps = {
+export type ImageProps = {
   alt: string;
+  border?: string;
+  borderRadius?: string;
+  boxShadow?: string;
   height: string;
   src: string;
+  padding?: string;
   width: string;
-  border?: string;
-  borderRadius: string;
 };
 
 const Image: React.FC<ImageProps> = (props: ImageProps) => {
-  const { alt, border, borderRadius, height, src, width } = props;
+  const {
+    alt,
+    border,
+    borderRadius,
+    boxShadow,
+    height,
+    padding,
+    src,
+    width,
+  } = props;
   return (
     <CustomImage
       alt={alt}
@@ -20,6 +31,8 @@ const Image: React.FC<ImageProps> = (props: ImageProps) => {
       width={width}
       borderradius={borderRadius}
       border={border}
+      boxshadow={boxShadow}
+      padding={padding}
     />
   );
 };
