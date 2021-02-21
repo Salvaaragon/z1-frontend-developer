@@ -17,26 +17,70 @@ El flujo debería ser el siguiente:
 
 ### Prerequisitos
 
-- [Docker](https://docs.docker.com/install/)
-- [Docker-compose](https://docs.docker.com/compose/install/)
+- [Yarn](https://yarnpkg.com/)
 
 ## Ejecutar la aplicación
 
-Este proyecto está configurado haciendo uso de docker y docker-compose. Para ejecutarlo es necesario haber instalado previamente estas herramientas en tu dispositivo.
+Instala yarn en tu dispositivo para ejecutar la aplicación directamente desde tu dispositivo local (sin uso de contenedores).
 
 ### Ejecución inicial
 
-Usa `docker-compose up -d --build` para crear el contenedor docker e instalar en él todas las dependencias de la app. Posteriormente, accede a la web en [http://localhost:3000](http://localhost:3000).
+Usa `yarn install` para instalar todas las dependencias del proyecto. Una vez hecho, ejecuta `yarn start` para iniciar la aplicación; que se lanzará en [http://localhost:3000](http://localhost:3000).
 
-Todos los cambios que realices en el código se actualizaran de forma automática en el navegador. Además, en la consola puedes ver cualquier error lint (esto solo ocurre si ejecutas el docker sin el flag `-d`, para que no se produzca en segundo plano).
+Todos los cambios que realices en el código se actualizaran de forma automática en el navegador. Además, en la consola puedes ver cualquier error lint.
 
 ### Ejecución
 
-Si no se han modificado las dependencias del proyecto, basta con ejecutar `docker-compose up -d` para iniciar la aplicación.
+Si no se han modificado las dependencias del proyecto, basta con ejecutar `yarn start` para iniciar la aplicación.
 
-### Finalizar la ejecución
+## Tests
 
-Utiliza `docker-compose stop` para parar el contenedor docker y la ejecución de la aplicación
+Se han desarrollado varios casos de prueba para validar el correcto funcionamiento de los componentes desarrollados. Para ejecutarlos, basta con lanzar el comando `yarn test`.
+
+#### Estructura de carpetas
+
+    .
+    ├── src                     # Componentes de la aplicación
+    │   ├── app                 # Componente App
+    │   ├── assets              # Imágenes, iconos, ...
+    │   ├── components          # Listado de componentes creados
+    │   │   ├── screens         # Vistas/pantallas de la aplicación
+    │   │   ├── services        # Listado de servicios utilizados (api, i18n, ...)
+    │   │   ├── store           # Configuración de la store redux
+    │   │   │   ├── actions     # Describen los eventos que se van a ejecutar (tipo y que devuelve)
+    │   │   │   ├── constants   # Variables constantes de la store
+    │   │   │   ├── reducers    # Definen los cambios de estados producidos por las acciones
+    │   │   │   └── sagas       # Funciones que manejan los side effects producidos por las acciones
+    │   │   ├── test            # Listado de tests
+    ├── public                  # Contiene los elementos que se van a mostrar en el navegador
+    │   └── locales             # Listado de traducciones
+    ├── .babelrc                # Configuración de babel
+    ├── .eslintignore
+    ├── .eslintrc.js            # Configuración de eslint
+    ├── .gitignore
+    ├── .prettierrc.js          # Configuración de prettier
+    ├── package.json
+    ├── README.md
+    ├── tsconfig.json
+    ├── tsconfig.paths.json     # Listado de alias
+    └── yarn.lock
+
+#### Alias
+
+Se han configurado, mediante Babel, diferentes alias para simplificar las importaciones de elementos de la aplicación. Estos se encuentran en el archivo `.babelrc`.
+
+#### Validación y formato de código ESLINT + Prettier
+
+Se ha configurado el proyecto para que se detecten erróres de sintáxis mediante ESLINT, a fin de tener un código más mantenible y que siga los estándares propios del clean code.
+
+Además, este proyecto hace uso de la herramienta Prettier; que, conectada al IDE (en mi caso, Visual Studio Code), te permite el formateo automático del código mediante las siguientes propiedades:
+
+```
+  semi: true => Incluye al final de cada elemento ';'
+  trailingComma: 'all' => Incluye al final de los objetos ',' siempre que sea posible
+  singleQuote: true => Uso de comillas simples
+  tabWidth: 2 => Identación mediante dos espacios
+```
 
 ## Dependencias
 
@@ -45,3 +89,8 @@ Utiliza `docker-compose stop` para parar el contenedor docker y la ejecución de
 - [Babel](https://babeljs.io/): Compilador JavaScript
 - [TypeScript](https://www.typescriptlang.org/)
 - [React-i18next](https://react.i18next.com/): Plugin de internacionalización para react basado en i18next
+- [Fontawesome](https://fontawesome.com/): Librería de iconos para nuestra aplicación
+- [React router](https://reactrouter.com/): Creación de rutas en nuestra aplicación
+- [Axios](https://github.com/axios/axios): Librería para ejecución de peticiones HTTP desde el navegador
+- [Redux](https://es.redux.js.org/): Contenedor de estados
+- [Redux-saga](https://redux-saga.js.org/): Librería para manejo de side effects
