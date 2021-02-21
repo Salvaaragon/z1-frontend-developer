@@ -10,7 +10,7 @@ const Home: React.FC = () => {
 
   return (
     <Layout displayHeader={true}>
-      <Grid>
+      <Grid padding="0 0 5rem 0">
         <Grid padding="2.25rem 1.8rem 1.8rem">
           <Text
             alignment="center"

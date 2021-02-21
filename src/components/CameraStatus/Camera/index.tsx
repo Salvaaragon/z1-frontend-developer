@@ -83,7 +83,11 @@ const Camera: React.FC = () => {
   };
 
   return (
-    <CameraContainer height="179px" width="289px" border={getBorderByStatus()}>
+    <CameraContainer
+      height="216.75px"
+      width="289px"
+      border={getBorderByStatus()}
+    >
       <CustomVideo autoPlay ref={videoRef}></CustomVideo>
       <CustomCanvas ref={canvasRef}></CustomCanvas>
     </CameraContainer>

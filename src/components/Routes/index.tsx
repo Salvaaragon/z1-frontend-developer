@@ -8,6 +8,7 @@ const Routes: React.FC = () => {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/capture-dni" component={CaptureDni} />
+      <Route component={Home} />
     </Switch>
   );
 };

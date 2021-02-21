@@ -10,7 +10,7 @@ const StatusApproved: React.FC = () => {
       iconColor="green"
       icon={faCheckCircle}
       text={i18n.t('capture:status.valid-photo')}
-      textColor="#000"
+      textColor="#FFF"
     />
   );
 };

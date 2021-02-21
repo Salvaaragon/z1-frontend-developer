@@ -33,8 +33,8 @@ const ImageErrorData: React.FC = () => {
         textColor="#FFF"
         type="button"
         position="absolute"
-        top="3.5rem"
-        left="3.25rem"
+        top="5rem"
+        left="3.75rem"
       />
     </>
   );

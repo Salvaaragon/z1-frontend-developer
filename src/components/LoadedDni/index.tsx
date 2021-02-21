@@ -23,9 +23,9 @@ const LoadedDni: React.FC<LoadedDniProps> = (props: LoadedDniProps) => {
         alt="empty-dni"
         borderRadius="12px"
         border={'solid 2px ' + getBorderColorByStatus()}
-        height="160px"
+        height="216.75px"
         src={dni}
-        width="260px"
+        width="289px"
       />
 
       {status === 'valid' && <ImageValidData />}

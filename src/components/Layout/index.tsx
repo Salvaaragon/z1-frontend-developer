@@ -1,3 +1,4 @@
+import { Grid } from '@Components/custom/Grid';
 import React, { ReactChild } from 'react';
 import Header from './Header';
 
@@ -10,10 +11,10 @@ const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
   const { children, displayHeader } = props;
 
   return (
-    <div>
+    <Grid>
       {displayHeader && <Header />}
       {children}
-    </div>
+    </Grid>
   );
 };
 
