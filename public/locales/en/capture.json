@@ -1,0 +1,11 @@
+{
+  "title": "Take picture",
+  "hint1": "Fit your ID card inside the frame",
+  "hint2": "The picture will be taken automatically.",
+  "status": {
+    "invalid-photo": "Room lighting is too low",
+    "valid-photo": "Picture taken!",
+    "error": "An error has ocurred"
+  },
+  "button": "CANCEL"
+}
