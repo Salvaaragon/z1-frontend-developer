@@ -19,6 +19,8 @@
     "@types/react-dom": "^17.0.0",
     "axios": "^0.21.1",
     "babel-plugin-module-resolver": "^4.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "i18next": "^19.8.7",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.1.0",
@@ -58,11 +60,18 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^@Components(.*)$": "<rootDir>/src/components$1"
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.12.17",
     "@babel/core": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
     "@rescripts/rescript-use-babel-config": "^0.0.12",
+    "@types/enzyme": "^3.10.8",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
     "@types/redux-persist": "^4.3.1",
