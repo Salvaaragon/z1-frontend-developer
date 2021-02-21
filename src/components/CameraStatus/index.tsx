@@ -28,12 +28,12 @@ const CameraStatus: React.FC = () => {
       {status === 'error' && <StatusError />}
       {status === 'Approved' && <StatusApproved />}
 
-      <Flex justifycontent="center" padding="8rem 0 0">
+      <Flex justifycontent="center" padding="8rem 0 5rem">
         <Button
           action={() => history.push('/')}
           type="link"
           text={i18n.t('capture:button')}
-          textColor="#000"
+          textColor="#FFF"
           fontWeight="bold"
         />
       </Flex>

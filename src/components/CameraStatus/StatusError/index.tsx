@@ -7,10 +7,10 @@ const StatusError: React.FC = () => {
   const { i18n } = useTranslation();
   return (
     <StatusIcon
-      iconColor="red"
+      iconColor="#FAB72D"
       icon={faLightbulb}
       text={i18n.t('capture:status.invalid-photo')}
-      textColor="#000"
+      textColor="#FFF"
     />
   );
 };

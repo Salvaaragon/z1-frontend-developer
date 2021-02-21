@@ -21,7 +21,8 @@ export const CameraContainer = styled.div.attrs(
 `;
 
 export const CustomVideo = styled.video`
-  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
 `;
 
 export const CustomCanvas = styled.canvas`
