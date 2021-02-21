@@ -12,6 +12,7 @@
           "@Router": "./src/router",
           "@Screens": "./src/screens",
           "@Services": "./src/services",
+          "@Store": "./src/store",
           "@Types": "./src/types",
           "@Utils": "./src/utils"
         }
