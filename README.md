@@ -21,7 +21,7 @@ El flujo debería ser el siguiente:
 
 ## Ejecutar la aplicación
 
-Instala yarn en tu dispositivo para ejecutar la aplicación directamente desde tu dispositivo local (sin uso de contenedores).
+Instala yarn en tu dispositivo para ejecutar la aplicación directamente desde tu dispositivo local.
 
 ### Ejecución inicial
 
@@ -51,7 +51,7 @@ Se han desarrollado varios casos de prueba para validar el correcto funcionamien
     │   │   │   ├── constants   # Variables constantes de la store
     │   │   │   ├── reducers    # Definen los cambios de estados producidos por las acciones
     │   │   │   └── sagas       # Funciones que manejan los side effects producidos por las acciones
-    │   │   ├── test            # Listado de tests
+    │   │   └── test            # Listado de tests
     ├── public                  # Contiene los elementos que se van a mostrar en el navegador
     │   └── locales             # Listado de traducciones
     ├── .babelrc                # Configuración de babel
