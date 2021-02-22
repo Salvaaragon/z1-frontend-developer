@@ -21,7 +21,7 @@ El flujo debería ser el siguiente:
 
 ## Ejecutar la aplicación
 
-Instala yarn en tu dispositivo para ejecutar la aplicación directamente desde tu dispositivo local (sin uso de contenedores).
+Instala yarn en tu dispositivo para ejecutar la aplicación directamente desde tu dispositivo local.
 
 ### Ejecución inicial
 
