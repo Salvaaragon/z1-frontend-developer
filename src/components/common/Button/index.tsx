@@ -73,4 +73,4 @@ Button.defaultProps = {
   left: '0',
 };
 
-export default Button;
+export default React.memo(Button);

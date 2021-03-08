@@ -5,7 +5,7 @@ type Status = 'Too Much Glare' | 'Approved' | 'error' | null;
 
 export interface ImageState {
   currentImage: string | null;
-  status: 'Too Much Glare' | 'Approved' | 'error' | null;
+  status: Status;
   imageSent: boolean;
 }
 
@@ -33,23 +33,9 @@ export const ImageReducer = (
         imageSent: true,
       };
     case RESET:
-      return {
-        status: null,
-        imageSent: false,
-        currentImage: null,
-      };
+      return initialState;
 
     default:
       return state;
   }
 };
-
-type GetCurrentImageType = (state: ImageState) => string | null;
-type GetStatusType = (state: ImageState) => Status;
-type GetImageSentType = (state: ImageState) => boolean;
-
-export const getCurrentImage: GetCurrentImageType = (state: ImageState) =>
-  state.currentImage;
-export const getStatus: GetStatusType = (state: ImageState) => state.status;
-export const getImageSent: GetImageSentType = (state: ImageState) =>
-  state.imageSent;
