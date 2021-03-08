@@ -2,17 +2,14 @@ import { Grid } from '@Components/custom/Grid';
 import EmptyDniButton from '@Components/EmptyDniButton';
 import LoadedDni from '@Components/LoadedDni';
 import { RootState } from '@Store/reducers';
-import { getCurrentImage, getStatus, ImageState } from '@Store/reducers/image';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 const CurrentStatusImage: React.FC = () => {
-  const imageState: ImageState = useSelector(
-    (state: RootState) => state.imageState,
+  const status = useSelector((state: RootState) => state.imageState.status);
+  const currentImage = useSelector(
+    (state: RootState) => state.imageState.currentImage,
   );
-
-  const status = getStatus(imageState);
-  const currentImage = getCurrentImage(imageState);
 
   return (
     <Grid>
@@ -27,4 +24,4 @@ const CurrentStatusImage: React.FC = () => {
   );
 };
 
-export default CurrentStatusImage;
+export default React.memo(CurrentStatusImage);

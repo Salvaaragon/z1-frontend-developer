@@ -1,26 +1,21 @@
 import { postImage } from '@Store/actions/image';
 import { RESET } from '@Store/constants/image';
 import { RootState } from '@Store/reducers';
-import { ImageState, getStatus, getImageSent } from '@Store/reducers/image';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { CameraContainer, CustomCanvas, CustomVideo } from './styled';
 
 const Camera: React.FC = () => {
-  const [cameraLoaded, setCameraLoaded] = useState(false);
-
   const videoRef: React.RefObject<HTMLVideoElement> = React.useRef(null);
   const canvasRef: React.RefObject<HTMLCanvasElement> = React.useRef(null);
   const history = useHistory();
 
   const dispatch = useDispatch();
-  const imageState: ImageState = useSelector(
-    (state: RootState) => state.imageState,
+  const status = useSelector((state: RootState) => state.imageState.status);
+  const imageSent = useSelector(
+    (state: RootState) => state.imageState.imageSent,
   );
-
-  const status = getStatus(imageState);
-  const imageSent = getImageSent(imageState);
 
   useEffect(() => {
     dispatch({ type: RESET });
@@ -28,23 +23,20 @@ const Camera: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (cameraLoaded === true) makePhoto();
-  }, [cameraLoaded]);
-
-  useEffect(() => {
-    if (imageSent === true && status !== 'Approved') makePhoto();
-  }, [imageSent]);
-
-  useEffect(() => {
     if (status === 'Approved') {
       const timer = setTimeout(() => {
         history.push('/');
       }, 2000);
       return () => clearTimeout(timer);
+    } else {
+      const timer = setTimeout(() => {
+        makePhoto();
+      }, 1500);
+      return () => clearTimeout(timer);
     }
-  }, [status]);
+  }, [imageSent]);
 
-  const startCamera = async () => {
+  const startCamera = useCallback(async () => {
     navigator.mediaDevices
       .getUserMedia({ video: true })
       .then((stream) => {
@@ -53,11 +45,13 @@ const Camera: React.FC = () => {
           if (videoRef.current) videoRef.current.onplaying = resolve;
         });
       })
-      .then(() => setCameraLoaded(true))
+      .then(() => {
+        makePhoto();
+      })
       .catch((error) => {
         console.log(error);
       });
-  };
+  }, []);
 
   const makePhoto = () => {
     if (videoRef.current && canvasRef.current) {
@@ -75,12 +69,12 @@ const Camera: React.FC = () => {
     }
   };
 
-  const getBorderByStatus = () => {
+  const getBorderByStatus = useCallback(() => {
     if (status === 'Too Much Glare') return 'solid 1px red';
     if (status === 'Approved') return 'solid 1px green';
 
     return 'none';
-  };
+  }, [status]);
 
   return (
     <CameraContainer
