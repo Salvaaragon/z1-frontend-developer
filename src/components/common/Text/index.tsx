@@ -1,30 +1,11 @@
 import React from 'react';
 import { CustomText } from './styles';
-
-type TextProps = {
-  alignment?: 'right' | 'center' | 'left';
-  color?: string;
-  fontFamily?: string;
-  fontSize?: string;
-  fontStyle?: string;
-  fontWeight?: string;
-  letterSpacing?: string;
-  lineHeight?: string;
-  text: string;
-};
+import { TextProps } from './types';
 
 const Text: React.FC<TextProps> = (props: TextProps) => {
-  const {
-    alignment,
-    color,
-    fontFamily,
-    fontSize,
-    fontStyle,
-    fontWeight,
-    letterSpacing,
-    lineHeight,
-    text,
-  } = props;
+  const { alignment, color, fontFamily, fontSize } = props;
+  const { fontStyle, fontWeight, letterSpacing, lineHeight, text } = props;
+
   return (
     <CustomText
       align={alignment}

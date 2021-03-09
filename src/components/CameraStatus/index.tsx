@@ -1,32 +1,19 @@
 import Button from '@Components/common/Button';
 import { Flex } from '@Components/custom/Flex';
-import { RootState } from '@Store/reducers';
-import { getStatus, ImageState } from '@Store/reducers/image';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Camera from './Camera';
-import StatusApproved from './StatusApproved';
-import StatusError from './StatusError';
+import Status from './Status';
 
 const CameraStatus: React.FC = () => {
-  const imageState: ImageState = useSelector(
-    (state: RootState) => state.imageState,
-  );
-
   const { i18n } = useTranslation();
   const history = useHistory();
-
-  const status = getStatus(imageState);
 
   return (
     <>
       <Camera />
-
-      {status === 'Too Much Glare' && <StatusError />}
-      {status === 'error' && <StatusError />}
-      {status === 'Approved' && <StatusApproved />}
+      <Status />
 
       <Flex justifycontent="center" padding="8rem 0 5rem">
         <Button
@@ -41,4 +28,4 @@ const CameraStatus: React.FC = () => {
   );
 };
 
-export default CameraStatus;
+export default React.memo(CameraStatus);
