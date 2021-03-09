@@ -3,11 +3,7 @@ import React from 'react';
 import ImageErrorData from './ImageErrorData';
 import ImageValidData from './ImageValidData';
 import { LoadedDniContainer } from './style';
-
-type LoadedDniProps = {
-  dni: string;
-  status: 'valid' | 'error';
-};
+import { LoadedDniProps } from './types';
 
 const LoadedDni: React.FC<LoadedDniProps> = (props: LoadedDniProps) => {
   const { dni, status } = props;

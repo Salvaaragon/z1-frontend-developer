@@ -1,11 +1,7 @@
 import { Grid } from '@Components/custom/Grid';
-import React, { ReactChild } from 'react';
+import React from 'react';
 import Header from './Header';
-
-type LayoutProps = {
-  displayHeader: boolean;
-  children: ReactChild;
-};
+import { LayoutProps } from './types';
 
 const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
   const { children, displayHeader } = props;

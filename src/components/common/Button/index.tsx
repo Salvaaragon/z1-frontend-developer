@@ -1,35 +1,11 @@
 import Text from '@Components/common/Text';
 import React from 'react';
 import { CustomButton, CustomLink } from './styles';
-
-export type ButtonProps = {
-  action: () => void;
-  backgroundColor?: string;
-  fontFamily?: string;
-  fontSize?: string;
-  fontWeight?: string;
-  textColor?: string;
-  type: 'button' | 'link';
-  text: string;
-  position?: 'absolute' | 'relative';
-  top?: string;
-  left?: string;
-};
+import { ButtonProps } from './types';
 
 const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const {
-    action,
-    backgroundColor,
-    fontFamily,
-    fontSize,
-    left,
-    position,
-    fontWeight,
-    textColor,
-    type,
-    text,
-    top,
-  } = props;
+  const { action, backgroundColor, fontFamily, fontSize } = props;
+  const { left, position, fontWeight, textColor, type, text, top } = props;
 
   return (
     <>
