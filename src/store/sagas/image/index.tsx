@@ -1,4 +1,5 @@
-import { PostImage, PostImageResponseType } from '@Services/api';
+import { PostImage } from '@Services/api';
+import { PostImageResponseType } from '@Services/api/types';
 import { ReduxAction } from '@Store/actions';
 import { postImageDone } from '@Store/actions/image';
 import { POST_IMAGE } from '@Store/constants/image';

@@ -1,33 +1,12 @@
 import Text from '@Components/common/Text';
 import { Flex } from '@Components/custom/Flex';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import React from 'react';
 import { CustomFAIcon } from './styled';
+import { StatusIconProps } from './types';
 
-export type StatusIconType = {
-  icon: IconProp;
-  iconColor: string;
-  text: string;
-  textColor: string;
-  left?: string;
-  padding?: string;
-  position?: string;
-  top?: string;
-  transform?: string;
-};
-
-const StatusIcon: React.FC<StatusIconType> = (props: StatusIconType) => {
-  const {
-    icon,
-    iconColor,
-    text,
-    textColor,
-    padding,
-    position,
-    left,
-    top,
-    transform,
-  } = props;
+const StatusIcon: React.FC<StatusIconProps> = (props: StatusIconProps) => {
+  const { icon, iconColor, text, textColor } = props;
+  const { padding, position, left, top, transform } = props;
 
   return (
     <Flex
