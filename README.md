@@ -40,29 +40,29 @@ Se han desarrollado varios casos de prueba para validar el correcto funcionamien
 #### Estructura de carpetas
 
     .
-    ├── src                     # Componentes de la aplicación
-    │   ├── app                 # Componente App
-    │   ├── assets              # Imágenes, iconos, ...
-    │   ├── components          # Listado de componentes creados
-    │   │   ├── screens         # Vistas/pantallas de la aplicación
-    │   │   ├── services        # Listado de servicios utilizados (api, i18n, ...)
-    │   │   ├── store           # Configuración de la store redux
-    │   │   │   ├── actions     # Describen los eventos que se van a ejecutar (tipo y que devuelve)
-    │   │   │   ├── constants   # Variables constantes de la store
-    │   │   │   ├── reducers    # Definen los cambios de estados producidos por las acciones
-    │   │   │   └── sagas       # Funciones que manejan los side effects producidos por las acciones
-    │   │   └── test            # Listado de tests
-    ├── public                  # Contiene los elementos que se van a mostrar en el navegador
-    │   └── locales             # Listado de traducciones
-    ├── .babelrc                # Configuración de babel
+    ├── public                # Contiene los elementos que se van a mostrar en el navegador
+    │   └── locales           # Listado de traducciones
+    ├── src                   # Componentes de la aplicación
+    │   ├── app               # Componente App
+    │   ├── assets            # Imágenes, iconos, ...
+    │   ├── components        # Listado de componentes creados
+    │   ├── screens           # Vistas/pantallas de la aplicación
+    │   ├── services          # Listado de servicios utilizados (api, i18n, ...)
+    │   ├── store             # Configuración de la store redux
+    │   │   ├── actions       # Describen los eventos que se van a ejecutar (tipo y que devuelve)
+    │   │   ├── constants     # Variables constantes de la store
+    │   │   ├── reducers      # Definen los cambios de estados producidos por las acciones
+    │   │   └── sagas         # Funciones que manejan los side effects producidos por las acciones
+    │   └── test              # Listado de tests
+    ├── .babelrc              # Configuración de babel
     ├── .eslintignore
-    ├── .eslintrc.js            # Configuración de eslint
+    ├── .eslintrc.js          # Configuración de eslint
     ├── .gitignore
-    ├── .prettierrc.js          # Configuración de prettier
+    ├── .prettierrc.js        # Configuración de prettier
     ├── package.json
     ├── README.md
     ├── tsconfig.json
-    ├── tsconfig.paths.json     # Listado de alias
+    ├── tsconfig.paths.json   # Listado de alias
     └── yarn.lock
 
 #### Alias
